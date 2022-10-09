@@ -7,6 +7,8 @@ public class Book {
     private List<String> Image = new ArrayList<String>();
     private List<String> Table = new ArrayList<String>();
 
+    private List<String> Details = new ArrayList<String>();
+
     public Book(String title)
     {
         this.title = title;
@@ -26,6 +28,11 @@ public class Book {
 
     public void print()
     {
-        System.out.print("Title: " + this.title + "\n" + "Paragraphs: " + this.Paragraph + "\n" + "Tables: " + this.Table + "\n" + "Images: " + this.Image);
+        System.out.print("Title: " + this.title
+                + "\n" + "Paragraphs: " + this.Paragraph
+                + "\n" + "Tables: " + this.Table
+                + "\n" + "Images: " + this.Image
+                + "\n" + "Details" + this.Details
+        );
     }
 }
