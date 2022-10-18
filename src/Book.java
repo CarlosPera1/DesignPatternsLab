@@ -2,37 +2,36 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Book {
-    private String title;
-    private List<String> Paragraph = new ArrayList<String>();
-    private List<String> Image = new ArrayList<String>();
-    private List<String> Table = new ArrayList<String>();
+    public String title;
+    public List<Author> authors = new ArrayList<Author>();
+    public List<Chapter> chapters = new ArrayList<Chapter>();
 
-    private List<String> Details = new ArrayList<String>();
-
-    public Book(String title)
-    {
+    public Book(String title) {
+        super();
         this.title = title;
     }
 
-    public void createNewParagraph(String paragraph) {
-        Paragraph.add(paragraph);
+    public void print() {
+        System.out.println("Carte: " + this.title);
     }
 
-    public void createNewImage(String image) {
-        Image.add(image);
+    public void addAuthor(Author rpGheo) {
+        authors.add(rpGheo);
     }
 
-    public void createNewTable(String table) {
-        Table.add(table);
+    public int createChapter(String string) {
+        chapters.add(new Chapter(string));
+        return chapters.size() - 1;
     }
 
-    public void print()
-    {
-        System.out.print("Title: " + this.title
-                + "\n" + "Paragraphs: " + this.Paragraph
-                + "\n" + "Tables: " + this.Table
-                + "\n" + "Images: " + this.Image
-                + "\n" + "Details" + this.Details
-        );
+    public Chapter getChapter(int indexChapterOne) {
+        int counter = 0;
+        for(Chapter e : chapters) {
+            if(counter == indexChapterOne) {
+                return e;
+            }
+            counter++;
+        }
+        return null;
     }
 }
