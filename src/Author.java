@@ -1,12 +1,21 @@
-public class Author {
-    public String name;
+public class Author
+{
+    private String name;
 
     public Author(String name) {
-        super();
         this.name = name;
     }
 
-    public void print() {
-        System.out.println("Autor: " + this.name);
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void print()
+    {
+        System.out.print(this.name);
     }
 }
