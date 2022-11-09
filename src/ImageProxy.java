@@ -10,7 +10,7 @@ public class ImageProxy implements Element, Picture {
 
     public ImageProxy(String url) {
         this.url = url;
-        this.realImage = loadImage();
+        this.realImage = null;
     }
 
     Image loadImage() {
@@ -23,6 +23,7 @@ public class ImageProxy implements Element, Picture {
 
     @Override
     public void print() {
+        realImage = loadImage();
         System.out.println("Url: " + this.url);
     }
 
