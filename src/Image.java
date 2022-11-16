@@ -31,4 +31,9 @@ public class Image implements Element {
     public int get(Element getElement) {
         return 0;
     }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitImage(this);
+    }
 }

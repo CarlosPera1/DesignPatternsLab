@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Section implements Element {
-    private String title;
+    public String title;
     public List<Element> listaElemente = new ArrayList<Element>();
 
     public Section(String title) {
@@ -34,5 +34,13 @@ public class Section implements Element {
     @Override
     public int get(Element getElement) {
         return 0;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitSection(this);
+        for(Element element: listaElemente) {
+            element.accept(visitor);
+        }
     }
 }

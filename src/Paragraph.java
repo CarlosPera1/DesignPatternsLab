@@ -1,5 +1,3 @@
-import javax.naming.Context;
-
 public class Paragraph implements Element
 {
     private String text;
@@ -30,6 +28,12 @@ public class Paragraph implements Element
     @Override
     public int get(Element getElement) {
         return 0;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitParagraph(this);
+
     }
 
     public String getText() {
