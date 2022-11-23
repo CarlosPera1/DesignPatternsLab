@@ -27,6 +27,6 @@ public class Table implements Element{
 
     @Override
     public void accept(Visitor visitor) {
-
+        visitor.visitTable(this);
     }
 }
