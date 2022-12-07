@@ -1,4 +1,5 @@
 import javax.naming.Context;
+import javax.print.Doc;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -23,6 +24,13 @@ public class Main {
         TableOfContents tableOfContents = new TableOfContents();
         ContentVisitor visitor = new ContentVisitor(tableOfContents);
         cap1.accept(visitor);
-        tableOfContents.print();
+
+        DocumentManager.getInstance().setBook(noapteBuna);
+
+        Printing();
+    }
+
+    public static void Printing() {
+        DocumentManager.getInstance().getBook().print();
     }
 }
